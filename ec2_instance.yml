@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 instance using the default security group of the default VPC
+
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: 't2.micro'
+      KeyName: 'slkey'
+      ImageId: 'ami-00a8151272c45cd8e'
+      SecurityGroups:
+         - default
+      Tags:
+        - Key: Name
+          Value: webinstance
